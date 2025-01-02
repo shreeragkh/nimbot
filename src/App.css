@@ -1,1 +1,44 @@
+body{
+    margin: 0;
+}
 
+.App{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    height: auto 99px;  
+}
+.right-corner{
+    display: flex;
+    align-items: center;
+    gap: 42px;
+}
+.border{
+    flex: 1 0 0;
+    align-self: stretch;
+    background-image: linear-gradient(to right, #F6852A , #2B7786);
+    width: 100%;
+    height: 18px;
+}
+.toggle-button{
+    width: 133px;
+    height: 68px;
+    flex-shrink: 0;
+    border-radius: 98px;
+    background: #4D7FFD;
+    display: flex;
+}
+.button{
+    width: 57px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #ffffff;
+    margin: 8px 67px 8px 9;
+}
