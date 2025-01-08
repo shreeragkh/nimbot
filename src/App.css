@@ -27,12 +27,15 @@ body{
     height: 18px;
 }
 .toggle-button{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     width: 133px;
     height: 68px;
     flex-shrink: 0;
     border-radius: 98px;
     background: #4D7FFD;
-    display: flex;
+    margin: 200px 27px 700px 1280px ;
 }
 .button{
     width: 57px;
@@ -40,5 +43,31 @@ body{
     flex-shrink: 0;
     border-radius: 50%;
     background-color: #ffffff;
-    margin: 8px 67px 8px 9;
+    margin: 2px 67px 8px 9;
+}
+ .prom-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 100%; /* Adjusted to take full width */
+    height: 86px;
+    padding: 8px 31px;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 44px;
+    border: 3px solid #125FDE;
+    background: #EEE;
+}
+.promp-box{
+    position: fixed;
+    display: flex;
+width: 1393px;
+height: 86px;
+padding: 8px 31px;
+justify-content: space-between;
+align-items: center;
+flex-shrink: 0;
+margin: 894px 29px 44px 18px;
 }
