@@ -43,8 +43,8 @@ function App() {
       </div>
       <div className='border'></div> 
       <div className="toggle-button" onClick={toggleTheme}>
-      <div className="button">
-        <img src={darkTheme ? moon : sunDim} alt="sunDim" />
+      <div className={darkTheme ? "right-end" : "left-end"}>
+        <img src={darkTheme ? moon : sunDim} alt="sunDim" className={darkTheme ? "halfmoon" : "sun" }/>
       </div>
     </div>
     <div className="textbox">
@@ -71,7 +71,9 @@ function App() {
           className="promp-text"
           placeholder="Write a message..."
         />
-        <img src={sent_icon} alt="Send" onClick={submitMessage} />
+        <div className="sent-button">
+        <img src={sent_icon} alt="Send" className='sent-icon' onClick={submitMessage} />
+        </div>
       </div>
     </div>
     <div>

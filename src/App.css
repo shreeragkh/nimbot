@@ -37,20 +37,18 @@ body{
     background: #4D7FFD;
     margin: 200px 27px 700px 1280px ;
 }
-.button{
+.left-end{
     width: 57px;
     height: 52px;
     flex-shrink: 0;
     border-radius: 50%;
     background-color: #ffffff;
-    margin: 2px 67px 8px 9;
+    margin: 8px 67px 8px 9px;
 }
- .prom-container {
+ .promp-container {
     position: fixed;
-    bottom: 0;
-    left: 0;
     display: flex;
-    width: 100%; /* Adjusted to take full width */
+    width: 95%;
     height: 86px;
     padding: 8px 31px;
     justify-content: space-between;
@@ -59,15 +57,39 @@ body{
     border-radius: 44px;
     border: 3px solid #125FDE;
     background: #EEE;
+    bottom: 0;
+    margin: 0 3px 0 10px;
+    /* flex-direction: column; */
 }
-.promp-box{
-    position: fixed;
-    display: flex;
-width: 1393px;
-height: 86px;
-padding: 8px 31px;
-justify-content: space-between;
-align-items: center;
+.sent-icon{
+    width: 60px;
+height: 41px;
 flex-shrink: 0;
-margin: 894px 29px 44px 18px;
+stroke-width: 3px;
+stroke: #125FDE;
 }
+
+.sent-button{
+    display: flex;
+width: 80px;
+padding: 10px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+flex-shrink: 0;
+}
+.sun{
+    margin: 7px 8px 8px 8px;
+}
+
+.right-end{
+    width: 57px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 57px;
+    background: #FFF;
+    margin: 8px 10px 8px 66px;
+}
+ .halfmoon{
+    margin: 10px 10px 10px 10px;
+ }
