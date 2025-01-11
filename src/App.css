@@ -45,11 +45,12 @@ body{
     background-color: #ffffff;
     margin: 8px 67px 8px 9px;
 }
- .promp-container {
+
+.promp-container {
     position: fixed;
     display: flex;
     width: 95%;
-    height: 86px;
+    height: 70px;
     padding: 8px 31px;
     justify-content: space-between;
     align-items: center;
@@ -57,26 +58,32 @@ body{
     border-radius: 44px;
     border: 3px solid #125FDE;
     background: #EEE;
-    bottom: 0;
+    bottom: 10px;
     margin: 0 3px 0 10px;
-    /* flex-direction: column; */
-}
-.sent-icon{
-    width: 60px;
-height: 41px;
-flex-shrink: 0;
-stroke-width: 3px;
-stroke: #125FDE;
 }
 
-.sent-button{
+.promp-box {
     display: flex;
-width: 80px;
-padding: 10px;
-justify-content: center;
-align-items: center;
-gap: 10px;
-flex-shrink: 0;
+    width: 100%;
+    align-items: center;
+}
+
+.sent-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 100%;
+    margin: 0 0 0 auto;
+}
+
+.sent-icon {
+    width: 60px;
+    height: 41px;
+    flex-shrink: 0;
+    stroke-width: 3px;
+    stroke: #125FDE;
+    cursor: pointer;
 }
 .sun{
     margin: 7px 8px 8px 8px;
@@ -93,3 +100,13 @@ flex-shrink: 0;
  .halfmoon{
     margin: 10px 10px 10px 10px;
  }
+ .promp-text{
+    color: #000;
+    font-family: "Poppins";
+    font-style: normal;
+    line-height: normal;
+    width: auto;
+    height: auto;
+    
+ }
+ 
