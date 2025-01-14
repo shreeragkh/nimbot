@@ -27,6 +27,10 @@ function App() {
 
   const submitMessage = (e) => {
     e.preventDefault();
+    if (temp.trim()===""){
+      alert("Please sent a message")
+      return
+    }
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -54,23 +58,42 @@ function App() {
           <img src={darkTheme ? moon : sunDim} alt="sunDim" className={darkTheme ? "halfmoon" : "sun"} />
         </div>
       </div>
-      <div className="textbox">
-        <p className='text'>Hi 👋, I am NIMBOT, Your virtual Assistant. How can I help you today?</p>
-      </div>
-      <div className="suggestion">
-        <div className="box1">
-          <p className="text-style">Admission</p>
-        </div>
-        <div className="box2">
-          <p className="text-style">PG Programmes</p>
-        </div>
-        <div className="box1">
-          <p className="text-style">UG Programmes</p>
-        </div>
-        <div className="box2">
-          <p className="text-style">Fee Structure</p>
-        </div>
-      </div>
+      
+      {chatHistory.length === 0 ? (
+          <>
+            <div className="textbox">
+              <p className="text">Hi 👋, I am NIMBOT, Your virtual Assistant. How can I help you today?</p>
+            </div>
+            <div className="suggestion">
+              <div className="box1">
+                <p className="text-style">Admission</p>
+              </div>
+              <div className="box2">
+                <p className="text-style">PG Programmes</p>
+              </div>
+              <div className="box1">
+                <p className="text-style">UG Programmes</p>
+              </div>
+              <div className="box2">
+                <p className="text-style">Fee Structure</p>
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="chat-messages">
+            {chatHistory.map((message, index) => (
+              <div
+                key={index}
+                className={`message ${message.sender === 'user' ? 'user-message' : 'bot-message'}`}
+              >
+                {message.text}
+              </div>
+            ))}
+            {loading && (
+              <div className='loading'>...</div>
+            )}
+          </div>
+        )}
       <div className="promp-container">
         <div className="promp-box">
           <textarea
@@ -85,44 +108,6 @@ function App() {
         </div>
       </div>
       <div>
-        {loading ? (
-          <div className="loading">...</div>
-        ) : (
-          <>
-            {chatHistory.length === 0 ? (
-              <>
-                <div className="textbox">
-                  <p className="text">Hi 👋, I am NIMBOT, Your virtual Assistant. How can I help you today?</p>
-                </div>
-                <div className="suggestion">
-                  <div className="box1">
-                    <p className="text-style">Admission</p>
-                  </div>
-                  <div className="box2">
-                    <p className="text-style">PG Programmes</p>
-                  </div>
-                  <div className="box1">
-                    <p className="text-style">UG Programmes</p>
-                  </div>
-                  <div className="box2">
-                    <p className="text-style">Fee Structure</p>
-                  </div>
-                </div>
-              </>
-            ) : (
-              <div className="chat-messages">
-                {chatHistory.map((message, index) => (
-                  <div
-                    key={index}
-                    className={`message ${message.sender === 'user' ? 'user-message' : 'bot-message'}`}
-                  >
-                    {message.text}
-                  </div>
-                ))}
-              </div>
-            )}
-          </>
-        )}
       </div>
     </div>
   );
