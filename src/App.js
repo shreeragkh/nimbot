@@ -31,15 +31,18 @@ function App() {
       alert("Please sent a message")
       return
     }
+    setChatHistory((history)=>[
+      ...history,
+      { sender: 'user', text: temp }
+    ])
+    setTemp('');
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
       setChatHistory((history) => [
         ...history,
-        { sender: 'user', text: temp },
         { sender: 'bot', text: 'This is a bot reply.' }
       ]);
-      setTemp('');
     }, 1000);
   };
 
