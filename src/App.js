@@ -26,14 +26,13 @@ function App() {
   };
 
   const submitMessage = (e) => {
-    e.preventDefault();
-    if (temp.trim()===""){
+    if (e.trim()===""){
       alert("Please sent a message")
       return
     }
     setChatHistory((history)=>[
       ...history,
-      { sender: 'user', text: temp }
+      { sender: 'user', text: e }
     ])
     setTemp('');
     setLoading(true);
@@ -43,8 +42,13 @@ function App() {
         ...history,
         { sender: 'bot', text: 'This is a bot reply.' }
       ]);
-    }, 1000);
+    }, 2000);
   };
+
+  const handlesubmitMessage=(e)=>{
+    e.preventDefault();
+    submitMessage(temp)
+  }
 
   return (
     <div className="App">
@@ -68,16 +72,16 @@ function App() {
               <p className="text">Hi 👋, I am NIMBOT, Your virtual Assistant. How can I help you today?</p>
             </div>
             <div className="suggestion">
-              <div className="box1">
+              <div className="box1" onClick={()=>submitMessage("Admission")}>
                 <p className="text-style">Admission</p>
               </div>
-              <div className="box2">
+              <div className="box2" onClick={()=>submitMessage("PG Programmes")}>
                 <p className="text-style">PG Programmes</p>
               </div>
-              <div className="box1">
+              <div className="box1" onClick={()=>submitMessage("UG Programmes")}>
                 <p className="text-style">UG Programmes</p>
               </div>
-              <div className="box2">
+              <div className="box2" onClick={()=>submitMessage("Fee Structure")}>
                 <p className="text-style">Fee Structure</p>
               </div>
             </div>
@@ -106,7 +110,7 @@ function App() {
             value={temp}
           />
           <div className="sent-button">
-            <img src={sent_icon} alt="Send" className='sent-icon' onClick={submitMessage} />
+            <img src={sent_icon} alt="Send" className='sent-icon' onClick={handlesubmitMessage} />
           </div>
         </div>
       </div>
