@@ -42,7 +42,7 @@ function App() {
         ...history,
         { sender: 'bot', text: 'This is a bot reply.' }
       ]);
-    }, 2000);
+    }, 5000);
   };
 
   const handlesubmitMessage=(e)=>{
@@ -97,7 +97,7 @@ function App() {
               </div>
             ))}
             {loading && (
-              <div className='loading'>...</div>
+              <div className='loading'></div>
             )}
           </div>
         )}
