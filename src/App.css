@@ -116,6 +116,14 @@ body{
  .box2{
     cursor: pointer;
  }
+
+ .Refresh_Button{
+    cursor: pointer;
+ }
+
+ .Window_close{
+    cursor: pointer;
+ }
  
 .loading {
     width: 30px;
