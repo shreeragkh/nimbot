@@ -69,7 +69,7 @@ function App() {
       {chatHistory.length === 0 ? (
           <>
             <div className="textbox">
-              <p className="text">Hi 👋, I am NIMBOT, Your virtual Assistant. How can I help you today?</p>
+              <p className="text">Hi 👋, I am NIMBOT, Your<br></br>virtual Assistant. How can I<br></br>help you today?</p>
             </div>
             <div className="suggestion">
               <div className="box1" onClick={()=>submitMessage("Admission")}>

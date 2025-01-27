@@ -7,7 +7,13 @@ body{
     height: 100%;
     margin: 0;
 }
+.logo{
+    position: fixed;
+    margin-bottom:100px;
+}
 .navbar{
+    background-color: white;
+   margin-top: 100px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -15,11 +21,16 @@ body{
     height: auto 99px;  
 }
 .right-corner{
+    width: 600px;
+    margin-left:1750px;
+    margin-bottom: 100px;
+    position: fixed;
     display: flex;
-    align-items: center;
+    align-items:center;
     gap: 42px;
 }
 .border{
+    position:fixed;
     flex: 1 0 0;
     align-self: stretch;
     background-image: linear-gradient(to right, #F6852A , #2B7786);
@@ -38,18 +49,20 @@ body{
     margin: 200px 27px 700px 1280px ;
 }
 .left-end{
+    position: fixed;
     width: 57px;
     height: 52px;
     flex-shrink: 0;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: #d3d3d3;
     margin: 8px 67px 8px 9px;
 }
+
 
 .promp-container {
     position: fixed;
     display: flex;
-    width: 95%;
+    width: 50%;
     height: 70px;
     padding: 8px 31px;
     justify-content: space-between;
@@ -57,15 +70,16 @@ body{
     flex-shrink: 0;
     border-radius: 44px;
     border: 3px solid #125FDE;
-    background: #EEE;
+    background: #ffffff;
     bottom: 10px;
-    margin: 0 3px 0 10px;
+    margin: 400px 90px 10px 420px;
 }
 
 .promp-box {
     display: flex;
     width: 100%;
     align-items: center;
+    
 }
 
 .sent-button {
@@ -78,7 +92,7 @@ body{
 }
 
 .sent-icon {
-    width: 60px;
+    width: 50px;
     height: 41px;
     flex-shrink: 0;
     stroke-width: 3px;
@@ -90,6 +104,7 @@ body{
 }
 
 .right-end{
+    position: fixed;
     width: 57px;
     height: 52px;
     flex-shrink: 0;
@@ -101,12 +116,14 @@ body{
     margin: 10px 10px 10px 10px;
  }
  .promp-text{
-    color: #000;
+    
+    color: black;
+    border-color: transparent;
     font-family: "Poppins";
     font-style: normal;
     line-height: normal;
-    width: auto;
-    height: auto;
+    width: 90%;
+    height:fit-content;
     
  }
  
@@ -144,3 +161,84 @@ body{
       60%{background-position:0%  50%, 50% 100%,100%   0%}
       80%{background-position:0%  50%, 50%  50%,100% 100%}
   }
+  .box1, .box2, .box3, .box4{
+    place-items:margin;;  
+    height: 15px;
+    width: 400px;
+    border: 4px solid #007bff;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    font-size: 16px;
+    text-align:center;
+    padding-bottom: 30px;
+  margin-top:center;
+  }
+  .suggestion{
+    width: 1000px;
+    height: 150px;
+    background: white;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    border-radius: 25px;
+    margin:400px 100px 100px 320px;
+    padding: 10px 20px 30px 150px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* 2 columns */
+    grid-template-rows: repeat(2, 1fr);     /* 2 rows */
+    gap: 10px;                             /* Space between the boxes */
+                           /* Set width of the grid */
+    margin-top: 400px;  
+  }
+  .text{
+    color: #125FDE;
+font-family: Poppins;
+font-size:  30px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin-left: 30px;
+  }
+  .message{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: fit-content;
+    margin: 0 auto;
+    margin-top: 150px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    overflow-y: auto;
+    height:fit-content;
+  }
+  
+  .chat-message {
+    overflow-y: auto;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 10px;
+    max-width: 70%;
+  }
+  
+  .user-message{
+    overflow-y: auto;
+    margin-right:50px ;
+    align-self: flex-end;
+    background-color: #9bc2eb;
+    color: rgb(0, 0, 0);
+    text-align: right;
+  }
+  
+  .bot-message{
+    overflow-y: auto;
+    margin-left: 50px;
+    align-self: flex-start;
+    background-color: #e0e0e0;
+    color: #333;
+    text-align: left;
+  }
+
+  
