@@ -162,7 +162,6 @@ body{
       80%{background-position:0%  50%, 50%  50%,100% 100%}
   }
   .box1, .box2, .box3, .box4{
-    place-items:margin;;  
     height: 15px;
     width: 400px;
     border: 4px solid #007bff;
@@ -186,11 +185,13 @@ body{
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);  /* 2 columns */
-    grid-template-rows: repeat(2, 1fr);     /* 2 rows */
-    gap: 10px;                             /* Space between the boxes */
-                           /* Set width of the grid */
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
     margin-top: 400px;  
+  }
+  .suggestion.darkTheme{
+    background-color: black;
   }
   .text{
     color: #125FDE;
@@ -215,14 +216,25 @@ margin-left: 30px;
     height:fit-content;
   }
   
-  .chat-message {
+  .chat-messages{
+    height:700px;
+    width:100%;
     overflow-y: auto;
-    display: inline-block;
     padding: 10px 15px;
     border-radius: 10px;
-    max-width: 70%;
+    max-width: 70%; 
+    margin-bottom: 80px;
+    max-height: calc(100vh - 200px);
+  }
+
+  .chat-messages::-webkit-scrollbar {
+    display: none;
   }
   
+  .chat-messages {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
   .user-message{
     overflow-y: auto;
     margin-right:50px ;

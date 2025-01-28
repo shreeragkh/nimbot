@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import logo from './assets/Logo.png';
 import Refresh_Button from './assets/Refresh_Button.png';
 import Window_close from './assets/Window_close.png';
@@ -12,6 +12,7 @@ function App() {
   const [chatHistory, setChatHistory] = useState([]);
   const [darkTheme, setDarkTheme] = useState(false);
   const [loading, setLoading] = useState(false);
+  const chatMessagesRef = useRef(null);
 
   const window_close = () => {
     window.close();
@@ -50,6 +51,12 @@ function App() {
     submitMessage(temp)
   }
 
+  useEffect(() => {
+    if (chatMessagesRef.current) {
+      chatMessagesRef.current.scrollTop = chatMessagesRef.current.scrollHeight;
+    }
+  }, [chatHistory, loading]);
+
   return (
     <div className="App">
       <div className='navbar'>
@@ -87,7 +94,7 @@ function App() {
             </div>
           </>
         ) : (
-          <div className="chat-messages">
+          <div className="chat-messages" ref={chatMessagesRef}>
             {chatHistory.map((message, index) => (
               <div
                 key={index}
