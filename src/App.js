@@ -58,7 +58,7 @@ function App() {
   }, [chatHistory, loading]);
 
   return (
-    <div className="App">
+    <div className={darkTheme ? "App + darkTheme" : "App"}>
       <div className='navbar'>
         <img className='logo' src={logo} alt='logo' />
         <div className='right-corner'>
