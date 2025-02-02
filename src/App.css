@@ -99,6 +99,9 @@ html,body{
     stroke: #125FDE;
     cursor: pointer;
 }
+.sent-icon.icon-blur{
+    opacity: 0.5;
+}
 .sun{
     margin: 7px 8px 8px 8px;
 }

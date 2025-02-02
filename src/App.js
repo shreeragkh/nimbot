@@ -117,7 +117,7 @@ function App() {
             value={temp}
           />
           <div className="sent-button">
-            <img src={sent_icon} alt="Send" className='sent-icon' onClick={handlesubmitMessage} />
+            <img src={sent_icon} alt="Send" className={loading ? "sent-icon icon-blur" : "sent-icon"} onClick={loading ? null : handlesubmitMessage} />
           </div>
         </div>
       </div>
