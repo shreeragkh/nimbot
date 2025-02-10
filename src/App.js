@@ -15,7 +15,7 @@ function App() {
   const chatMessagesRef = useRef(null);
 
   const window_close = () => {
-    window.close();
+    alert("Due to some browser restrictions, the window cannot be closed. Please close the tab manually.")
   };
 
   const refresh = () => {
