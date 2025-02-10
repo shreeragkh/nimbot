@@ -14,7 +14,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   const window_close = () => {
-    window.close();
+    alert("Due to some restrictions in browser window cannot be closed. So please close the tab manually.")
   };
 
   const refresh = () => {
