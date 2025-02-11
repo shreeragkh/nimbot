@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import axios from 'axios';
 import logo from './assets/Logo.png';
 import Refresh_Button from './assets/Refresh_Button.png';
 import Window_close from './assets/Window_close.png';
@@ -26,23 +27,30 @@ function App() {
     setDarkTheme(!darkTheme);
   };
 
-  const submitMessage = (e) => {
-    if (e.trim()===""){
+  const submitMessage = (message) => {
+    if (message.trim()===""){
       alert("Please sent a message")
       return
     }
     setChatHistory((history)=>[
       ...history,
-      { sender: 'user', text: e }
+      { sender: 'user', text: message }
     ])
     setTemp('');
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setChatHistory((history) => [
-        ...history,
-        { sender: 'bot', text: 'This is a bot reply.' }
-      ]);
+    setTimeout(async () => {
+      try {
+        const response = await axios.post('http://127.0.0.1:8000/api/chat', { message });
+        setChatHistory((history) => [
+          ...history,
+          { sender: 'bot', text: response.data.reply }
+        ]);
+      } catch (error) {
+        console.error("Error sending message:", error);
+        alert("Error sending message");
+      } finally {
+        setLoading(false);
+      }
     }, 5000);
   };
 
