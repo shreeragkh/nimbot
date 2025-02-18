@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 html,body{
         margin: auto;   
         font-family: 'Poppins', sans-serif;
@@ -11,6 +15,7 @@ html,body{
 .App{
     width: 100%;
     height: 100%;
+    min-height: 100vh;
     margin: 0;
 }
 .App.darkTheme{
@@ -43,7 +48,6 @@ html,body{
 }
 
 .logo{
-    /* position: fixed; */
     margin: bottom 0;
 }
 .navbar{
@@ -92,9 +96,9 @@ html,body{
 
 
 .promp-container {
-    position: fixed; /* Sticks to the bottom */
+    position: fixed; 
     display: flex;
-    width: 40%; /* Adjust width as needed */
+    width: 40%; 
     height: 60px;
     padding: 8px 31px;
     justify-content: space-between;
@@ -103,10 +107,10 @@ html,body{
     border-radius: 44px;
     border: 3px solid #125FDE;
  
-    bottom: 20px; /* Ensures it's 20px from the bottom */
-    left: 49%; /* Moves it to the center */
-    transform: translateX(-50%); /* Perfectly centers it */
-    margin: 0; /* Remove unnecessary margins */
+    bottom: 20px; 
+    left: 49%; 
+    transform: translateX(-50%); 
+    margin: 0; 
 }
 
 .promp-box {
@@ -213,15 +217,15 @@ html,body{
   .suggestion{
         display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centers items horizontally */
-    align-items: center; /* Centers items vertically */
-    gap: 15px; /* Adds spacing between buttons */
-    width: 100%; /* Makes it full width */
-    max-width: 1000px; /* Ensures it doesn't stretch too much */
-    height: auto; /* Allows it to expand naturally */
+    justify-content: center; 
+    align-items: center; 
+    gap: 15px; 
+    width: 100%; 
+    max-width: 1000px; 
+    height: auto; 
    
     border-radius: 25px;
-    margin: 50px auto; /* Centers the entire section */
+    margin: 50px auto; 
     margin: 320px auto 0 auto;
   }
   .text{

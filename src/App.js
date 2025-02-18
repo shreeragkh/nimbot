@@ -8,16 +8,29 @@ import sent_icon from './assets/Sent_icon.png';
 import './App.css';
 
 function App() {
+  const getInitialTheme = () => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      return storedTheme === "dark";
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  };
+
   const [temp, setTemp] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
-  const [darkTheme, setDarkTheme] = useState(false);
+  const [darkTheme, setDarkTheme] = useState(getInitialTheme());
   const [loading, setLoading] = useState(false);
   const chatMessagesRef = useRef(null);
 
+  useEffect(() => {
+    document.body.className = darkTheme ? "darkTheme" : "lightTheme";
+    localStorage.setItem("theme", darkTheme ? "dark" : "light");
+  }, [darkTheme]);
+
 
   const window_close = () => {
-    // alert("Due to some browser restrictions, the window cannot be closed. Please close the tab manually.")
-    window.close()
+    alert("Due to some browser restrictions, the window cannot be closed. Please close the tab manually.")
+    // window.close()
   };
 
   const refresh = () => {
@@ -25,7 +38,7 @@ function App() {
   };
 
   const toggleTheme = () => {
-    setDarkTheme(!darkTheme);
+    setDarkTheme((prevTheme) => !prevTheme);
   };
 
   const submitMessage = (e) => {
@@ -62,7 +75,7 @@ function App() {
   }, [chatHistory, loading]);
 
   return (
-    <div className={darkTheme ? "App + darkTheme" : "App"}>
+    <div className={darkTheme ? "App  darkTheme" : "App"}>
       <div className='navbar'>
         <img className='logo' src={logo} alt='logo' />
         <div className='right-corner'>
@@ -95,7 +108,7 @@ function App() {
               <div className="box2" onClick={()=>submitMessage("Fee Structure")}>
                 <p className="text-style">Fee Structure</p>
               </div>
-            </div>
+             </div>
           </>
         ) : (
           <div className="chat-messages" ref={chatMessagesRef}>
