@@ -1,8 +1,12 @@
 html,body{
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    height: 100%;
+        margin: auto;   
+             font-family: 'Poppins', sans-serif;
+        height: 100%;
+        overflow: hidden;
+ 
+        
 }
+
 
 .App{
     width: 100%;
@@ -11,7 +15,44 @@ html,body{
 }
 .App.darkTheme{
   background-color: black;
+  color: white !important;
+
 }
+
+
+.promp-text {
+    color: black !important;
+}
+
+/* Override Dark Theme */
+.darkTheme html, 
+.darkTheme body,
+.darkTheme .App {
+    background-color: black !important;
+    color: white !important;
+}
+
+.darkTheme .right-end {
+    background-color: #222 !important;
+}
+
+.darkTheme .promp-container {
+    background-color: #222 !important;
+    border: 3px solid #444 !important;
+}
+
+.darkTheme .promp-text {
+    color: white !important;
+}
+
+
+
+
+
+
+
+
+
 .logo{
     /* position: fixed; */
     margin: bottom 0;
@@ -37,17 +78,20 @@ html,body{
     width: 100%;
     height: 18px;
 }
-.toggle-button{
+.toggle-button {
     position: fixed;
-    bottom: 20px;
+    top: 140px;
     right: 20px;
-    width: 133px;
-    height: 68px;
-    flex-shrink: 0;
-    border-radius: 98px;
+    width: 68px; /* Adjusted for better proportions */
+    height: 34px;
+    border-radius: 50px;
     background: #4D7FFD;
-    margin: 200px 27px 700px 1280px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow */
 }
+
 .left-end{
     position: fixed;
     width: 57px;
@@ -60,19 +104,21 @@ html,body{
 
 
 .promp-container {
-    position: fixed;
+    position: fixed; /* Sticks to the bottom */
     display: flex;
-    width: 50%;
-    height: 70px;
+    width: 40%; /* Adjust width as needed */
+    height: 60px;
     padding: 8px 31px;
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
     border-radius: 44px;
     border: 3px solid #125FDE;
-    background: #ffffff;
-    bottom: 0;
-    margin: 400px 90px 10px 420px;
+ 
+    bottom: 20px; /* Ensures it's 20px from the bottom */
+    left: 49%; /* Moves it to the center */
+    transform: translateX(-50%); /* Perfectly centers it */
+    margin: 0; /* Remove unnecessary margins */
 }
 
 .promp-box {
@@ -119,8 +165,8 @@ html,body{
     margin: 10px 10px 10px 10px;
  }
  .promp-text{
-    
-    color: black;
+    background:transparent;    
+    color: rgb(71, 70, 70);
     border-color: transparent;
     font-family: "Poppins";
     font-style: normal;
@@ -168,33 +214,27 @@ html,body{
     height: 15px;
     width: 400px;
     border: 4px solid #007bff;
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
+   
+    color: rgb(87, 87, 87);
     border-radius: 30px;
     font-size: 16px;
     text-align:center;
     padding-bottom: 30px;
-  margin-top:center;
+  margin-top:auto;
   }
   .suggestion{
-    width: 1000px;
-    height: 150px;
-    background: white;
-    border: 2px solid #ffffff;
-    color: #ffffff;
+        display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    gap: 15px; /* Adds spacing between buttons */
+    width: 100%; /* Makes it full width */
+    max-width: 1000px; /* Ensures it doesn't stretch too much */
+    height: auto; /* Allows it to expand naturally */
+   
     border-radius: 25px;
-    margin:400px 100px 100px 320px;
-    padding: 10px 20px 30px 150px;
-    cursor: pointer;
-    /* transition: background-color 0.3s, color 0.3s; */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
-    margin-top: 400px;  
-  }
-  .suggestion.darkTheme{
-    background-color: black;
+    margin: 50px auto; /* Centers the entire section */
+    margin: 320px auto 0 auto;
   }
   .text{
     color: #125FDE;
@@ -215,18 +255,18 @@ margin-left: 30px;
     padding: 20px;
     background-color: #f1f1f1;
     border-radius: 10px;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     height:fit-content;
   }
   
   .chat-messages{
     height:700px;
     width:100%;
-    overflow-y: auto;
+    overflow-y: auto;  /* Enables vertical scrolling */
+    overflow-x: hidden; /* Prevents horizontal scroll */
     padding: 10px 15px;
     border-radius: 10px;
-    max-width: 70%; 
-    margin-bottom: 80px;
+    max-width: 100%; 
     max-height: calc(100vh - 200px);
   }
 
@@ -239,7 +279,7 @@ margin-left: 30px;
     scrollbar-width: none;
   }
   .user-message{
-    overflow-y: auto;
+  
     margin-right:50px ;
     align-self: flex-end;
     background-color: #9bc2eb;
@@ -248,7 +288,7 @@ margin-left: 30px;
   }
   
   .bot-message{
-    overflow-y: auto;
+    
     margin-left: 50px;
     align-self: flex-start;
     background-color: #e0e0e0;
@@ -256,7 +296,8 @@ margin-left: 30px;
     text-align: left;
   }
 
-  /* @media (min-width: 576px) and (max-width: 767.98px) {
+
+  @media (min-width: 576px) and (max-width: 767.98px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -380,4 +421,4 @@ margin-left: 30px;
         padding: 10px;
     }
 }
-   */
+   
