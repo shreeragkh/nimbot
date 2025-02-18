@@ -1,27 +1,41 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+import os
 
-app = FastAPI()
+from dotenv import load_dotenv
+from flask import Flask, jsonify, request
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # Adjust this to your needs
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+from langchain_google_genai import ChatGoogleGenerativeAI
 
-class Message(BaseModel):
-    message: str
-
-@app.post("/api/chat")
-async def chat(message: Message):
-    # Return a fixed bot reply
-    reply = "This is reply"
-    return {"reply": reply}
+# Set up Flask app
+app = Flask(__name__)
 
 
+# Load environment variables from .env
+load_dotenv()
+
+
+# Initialize the ChatGoogleGenerativeAI model
+llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-lite-preview-02-05")
+
+
+def generate_response(prompt):
+    response = llm.invoke(prompt)
+    # Convert the AIMessage object to a dictionary
+    response_dict = {
+        "content": response.content,
+        "name": response.name,
+    }
+    return response_dict
+
+
+# Endpoint to generate response from the model
+@app.route("/generate", methods=["POST"])
+def generate():
+    data = request.json
+    prompt = data.get("prompt")
+    response = generate_response(prompt)
+    return jsonify({"response": response})
+
+
+# Run the Flask app
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    app.run(debug=True)
