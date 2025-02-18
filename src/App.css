@@ -1,11 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 html,body{
         margin: auto;   
-             font-family: 'Poppins', sans-serif;
+        font-family: 'Poppins', sans-serif;
         height: 100%;
         overflow: hidden;
- 
-        
-}
+ }
 
 
 .App{
@@ -24,9 +24,6 @@ html,body{
     color: black !important;
 }
 
-/* Override Dark Theme */
-.darkTheme html, 
-.darkTheme body,
 .darkTheme .App {
     background-color: black !important;
     color: white !important;
@@ -44,14 +41,6 @@ html,body{
 .darkTheme .promp-text {
     color: white !important;
 }
-
-
-
-
-
-
-
-
 
 .logo{
     /* position: fixed; */
@@ -71,7 +60,6 @@ html,body{
   gap: 42px;
 }
 .border{
-    /* position:fixed; */
     flex: 1 0 0;
     align-self: stretch;
     background-image: linear-gradient(to right, #F6852A , #2B7786);
@@ -82,14 +70,14 @@ html,body{
     position: fixed;
     top: 140px;
     right: 20px;
-    width: 68px; /* Adjusted for better proportions */
+    width: 68px; 
     height: 34px;
     border-radius: 50px;
     background: #4D7FFD;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 .left-end{

@@ -14,8 +14,10 @@ function App() {
   const [loading, setLoading] = useState(false);
   const chatMessagesRef = useRef(null);
 
+
   const window_close = () => {
-    alert("Due to some browser restrictions, the window cannot be closed. Please close the tab manually.")
+    // alert("Due to some browser restrictions, the window cannot be closed. Please close the tab manually.")
+    window.close()
   };
 
   const refresh = () => {
@@ -50,6 +52,8 @@ function App() {
     e.preventDefault();
     submitMessage(temp)
   }
+
+  
 
   useEffect(() => {
     if (chatMessagesRef.current) {
