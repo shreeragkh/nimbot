@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
+import ReactMarkdown from 'react-markdown';
 import logo from './assets/Logo.png';
 import Refresh_Button from './assets/Refresh_Button.png';
 import Window_close from './assets/Window_close.png';
@@ -27,37 +28,31 @@ function App() {
     setDarkTheme(!darkTheme);
   };
 
-  const submitMessage = (message) => {
-    if (message.trim()===""){
-      alert("Please sent a message")
-      return
+  const submitMessage = async (message) => {
+    if (message.trim() === "") {
+      alert("Please send a message");
+      return;
     }
-    setChatHistory((history)=>[
-      ...history,
-      { sender: 'user', text: message }
-    ])
+    setChatHistory((history) => [...history, { sender: 'user', text: message }]);
     setTemp('');
     setLoading(true);
-    setTimeout(async () => {
-      try {
-        const response = await axios.post('http://127.0.0.1:8000/api/chat', { message });
-        setChatHistory((history) => [
-          ...history,
-          { sender: 'bot', text: response.data.reply }
-        ]);
-      } catch (error) {
-        console.error("Error sending message:", error);
-        alert("Error sending message");
-      } finally {
-        setLoading(false);
-      }
-    }, 5000);
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/generate', { prompt: message });
+      const response_data = await response.data;
+      setChatHistory((history) => [...history, { sender: 'bot', text: response_data.response.content }]);
+      // console.log(response_data.response.content);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("Error sending message");
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handlesubmitMessage=(e)=>{
+  const handlesubmitMessage = (e) => {
     e.preventDefault();
-    submitMessage(temp)
-  }
+    submitMessage(temp);
+  };
 
   useEffect(() => {
     if (chatMessagesRef.current) {
@@ -66,7 +61,7 @@ function App() {
   }, [chatHistory, loading]);
 
   return (
-    <div className={darkTheme ? "App + darkTheme" : "App"}>
+    <div className={darkTheme ? "App darkTheme" : "App"}>
       <div className='navbar'>
         <img className='logo' src={logo} alt='logo' />
         <div className='right-corner'>
@@ -77,45 +72,39 @@ function App() {
       <div className='border'></div>
       <div className="toggle-button" onClick={toggleTheme}>
         <div className={darkTheme ? "right-end" : "left-end"}>
-          <img src={darkTheme ? moon : sunDim} alt="sunDim" className={darkTheme ? "halfmoon" : "sun"} />
+          <img src={darkTheme ? moon : sunDim} alt="Theme Toggle" className={darkTheme ? "halfmoon" : "sun"} />
         </div>
       </div>
-      
       {chatHistory.length === 0 ? (
-          <>
-            <div className="textbox">
-              <p className="text">Hi 👋, I am NIMBOT, Your<br></br>virtual Assistant. How can I<br></br>help you today?</p>
-            </div>
-            <div className="suggestion">
-              <div className="box1" onClick={()=>submitMessage("Admission")}>
-                <p className="text-style">Admission</p>
-              </div>
-              <div className="box2" onClick={()=>submitMessage("PG Programmes")}>
-                <p className="text-style">PG Programmes</p>
-              </div>
-              <div className="box1" onClick={()=>submitMessage("UG Programmes")}>
-                <p className="text-style">UG Programmes</p>
-              </div>
-              <div className="box2" onClick={()=>submitMessage("Fee Structure")}>
-                <p className="text-style">Fee Structure</p>
-              </div>
-            </div>
-          </>
-        ) : (
-          <div className="chat-messages" ref={chatMessagesRef}>
-            {chatHistory.map((message, index) => (
-              <div
-                key={index}
-                className={`message ${message.sender === 'user' ? 'user-message' : 'bot-message'}`}
-              >
-                {message.text}
-              </div>
-            ))}
-            {loading && (
-              <div className='loading'></div>
-            )}
+        <>
+          <div className="textbox">
+            <p className="text">Hi 👋, I am NIMBOT, Your<br></br>virtual Assistant. How can I<br></br>help you today?</p>
           </div>
-        )}
+          <div className="suggestion">
+            <div className="box1" onClick={() => submitMessage("Admission")}>
+              <p className="text-style">Admission</p>
+            </div>
+            <div className="box2" onClick={() => submitMessage("PG Programmes")}>
+              <p className="text-style">PG Programmes</p>
+            </div>
+            <div className="box1" onClick={() => submitMessage("UG Programmes")}>
+              <p className="text-style">UG Programmes</p>
+            </div>
+            <div className="box2" onClick={() => submitMessage("Fee Structure")}>
+              <p className="text-style">Fee Structure</p>
+            </div>
+          </div>
+        </>
+      ) : (
+        <div className="chat-messages" ref={chatMessagesRef}>
+          {chatHistory.map((message, index) => (
+            <div key={index} className={`message ${message.sender === 'user' ? 'user-message' : 'bot-message'}`}>
+              <ReactMarkdown>{message.text}</ReactMarkdown>
+            </div>
+          ))}
+          {loading && <div className='loading'></div>}
+        </div>
+      )}
       <div className="promp-container">
         <div className="promp-box">
           <textarea
@@ -128,8 +117,6 @@ function App() {
             <img src={sent_icon} alt="Send" className={loading ? "sent-icon icon-blur" : "sent-icon"} onClick={loading ? null : handlesubmitMessage} />
           </div>
         </div>
-      </div>
-      <div>
       </div>
     </div>
   );
