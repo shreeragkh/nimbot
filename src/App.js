@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
+import axios from 'axios';
+import ReactMarkdown from 'react-markdown';
 import logo from './assets/Logo.png';
 import Refresh_Button from './assets/Refresh_Button.png';
 import Window_close from './assets/Window_close.png';
@@ -41,30 +43,31 @@ function App() {
     setDarkTheme((prevTheme) => !prevTheme);
   };
 
-  const submitMessage = (e) => {
-    if (e.trim()===""){
-      alert("Please sent a message")
-      return
+  const submitMessage = async (message) => {
+    if (message.trim() === "") {
+      alert("Please send a message");
+      return;
     }
-    setChatHistory((history)=>[
-      ...history,
-      { sender: 'user', text: e }
-    ])
+    setChatHistory((history) => [...history, { sender: 'user', text: message }]);
     setTemp('');
     setLoading(true);
-    setTimeout(() => {
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/generate', { prompt: message });
+      const response_data = await response.data;
+      setChatHistory((history) => [...history, { sender: 'bot', text: response_data.response.content }]);
+      // console.log(response_data.response.content);
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("Error sending message");
+    } finally {
       setLoading(false);
-      setChatHistory((history) => [
-        ...history,
-        { sender: 'bot', text: 'This is a bot reply.' }
-      ]);
-    }, 5000);
+    }
   };
 
-  const handlesubmitMessage=(e)=>{
+  const handlesubmitMessage = (e) => {
     e.preventDefault();
-    submitMessage(temp)
-  }
+    submitMessage(temp);
+  };
 
   
 
@@ -86,10 +89,9 @@ function App() {
       <div className='border'></div>
       <div className="toggle-button" onClick={toggleTheme}>
         <div className={darkTheme ? "right-end" : "left-end"}>
-          <img src={darkTheme ? moon : sunDim} alt="sunDim" className={darkTheme ? "halfmoon" : "sun"} />
+          <img src={darkTheme ? moon : sunDim} alt="Theme Toggle" className={darkTheme ? "halfmoon" : "sun"} />
         </div>
       </div>
-      
       {chatHistory.length === 0 ? (
           <>
             <div className="textbox">
@@ -110,21 +112,16 @@ function App() {
               </div>
              </div>
           </>
-        ) : (
-          <div className="chat-messages" ref={chatMessagesRef}>
-            {chatHistory.map((message, index) => (
-              <div
-                key={index}
-                className={`message ${message.sender === 'user' ? 'user-message' : 'bot-message'}`}
-              >
-                {message.text}
-              </div>
-            ))}
-            {loading && (
-              <div className='loading'></div>
-            )}
-          </div>
-        )}
+        )  : (
+        <div className="chat-messages" ref={chatMessagesRef}>
+          {chatHistory.map((message, index) => (
+            <div key={index} className={`message ${message.sender === 'user' ? 'user-message' : 'bot-message'}`}>
+              <ReactMarkdown>{message.text}</ReactMarkdown>
+            </div>
+          ))}
+          {loading && <div className='loading'></div>}
+        </div>
+      )}
       <div className="promp-container">
         <div className="promp-box">
           <textarea
@@ -137,8 +134,6 @@ function App() {
             <img src={sent_icon} alt="Send" className={loading ? "sent-icon icon-blur" : "sent-icon"} onClick={loading ? null : handlesubmitMessage} />
           </div>
         </div>
-      </div>
-      <div>
       </div>
     </div>
   );

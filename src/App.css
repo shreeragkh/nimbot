@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 html,body{
         margin: auto;   
              font-family: 'Poppins', sans-serif;
@@ -71,7 +73,6 @@ html,body{
   gap: 42px;
 }
 .border{
-    /* position:fixed; */
     flex: 1 0 0;
     align-self: stretch;
     background-image: linear-gradient(to right, #F6852A , #2B7786);
@@ -233,12 +234,21 @@ html,body{
     height: auto; /* Allows it to expand naturally */
    
     border-radius: 25px;
-    margin: 50px auto; /* Centers the entire section */
-    margin: 320px auto 0 auto;
+    margin:400px 100px 100px 320px;
+    padding: 10px 20px 30px 150px;
+    cursor: pointer;
+    /* transition: background-color 0.3s, color 0.3s; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 400px;  
+  }
+  .suggestion.darkTheme{
+    background-color: black;
   }
   .text{
     color: #125FDE;
-font-family: Poppins;
 font-size:  30px;
 font-style: normal;
 font-weight: 700;
@@ -284,7 +294,8 @@ margin-left: 30px;
     align-self: flex-end;
     background-color: #9bc2eb;
     color: rgb(0, 0, 0);
-    text-align: right;
+    text-align: left;
+    word-wrap: break-word;
   }
   
   .bot-message{
@@ -295,6 +306,7 @@ margin-left: 30px;
     background-color: #e0e0e0;
     color: #333;
     text-align: left;
+    word-wrap: break-word;
   }
 
 
