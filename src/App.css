@@ -65,7 +65,7 @@ html,body{
     justify-content: space-between;
     align-items: center; 
     height: 99px;  
-    padding: 0 7px;@media (max-width: 768px)
+    padding: 0 7px;
 }
 .right-corner{
   display: flex;
@@ -501,4 +501,3 @@ margin-left: 30px;
         padding: 10px;
     }
 }
-   
