@@ -213,7 +213,7 @@ html,body{
   }
   .box1, .box2, .box3, .box4{
     height: 15px;
-    width: 400px;
+    /* width: ; */
     border: 4px solid #007bff;
    
     color: rgb(87, 87, 87);
@@ -234,15 +234,17 @@ html,body{
     height: auto; /* Allows it to expand naturally */
    
     border-radius: 25px;
-    margin:400px 100px 100px 320px;
-    padding: 10px 20px 30px 150px;
+   
     cursor: pointer;
     /* transition: background-color 0.3s, color 0.3s; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 10px;
-    margin-top: 400px;  
+    position: absolute;
+    top: 70%;
+    right: 50%;
+    transform: translateX(50%);
   }
   .suggestion.darkTheme{
     background-color: black;
@@ -342,13 +344,13 @@ and (max-width : 425px) {
     height: 14px;
     width: 14px;
     }
-    .suggestion {
+    /* .suggestion {
         width: 55%;
         margin: 400px 20px 20px 60px;
-    }
+    } */
     .box1, .box2, .box3, .box4{
         height: 2px;
-  width: 171px;
+  /* width: 171px; */
         border: 4px solid #007bff;
         font-size: 11px;
         text-align: center;
@@ -413,12 +415,12 @@ and (max-width : 767px)
     width: 14px;
     }
     .suggestion {
-        width: 20%;
-        margin: 500px 50px 20px 50px;
+     top:72%;
+     width: 80%;   
     }
     .box1, .box2, .box3, .box4{
         height: 2px;
-  width: 171px;
+  /* width: 171px; */
         border: 4px solid #007bff;
         font-size: 11px;
         text-align: center;
@@ -483,13 +485,10 @@ and (orientation : portrait)
     height: 14px;
     width: 14px;
     }
-    .suggestion {
-        width: 55%;
-        margin: 400px 20px 20px 60px;
-    }
+    
     .box1, .box2, .box3, .box4{
         height: 2px;
-  width: 171px;
+  /* width: 171px; */
         border: 4px solid #007bff;
         font-size: 11px;
         text-align: center;
@@ -554,13 +553,10 @@ and (orientation : landscape)
     height: 14px;
     width: 14px;
     }
-    .suggestion {
-        width: 55%;
-        margin: 400px 20px 20px 60px;
-    }
+   
     .box1, .box2, .box3, .box4{
         height: 2px;
-  width: 171px;
+  /* width: 171px; */
         border: 4px solid #007bff;
         font-size: 11px;
         text-align: center;
@@ -625,13 +621,10 @@ and (max-device-width : 1200px)
     height: 14px;
     width: 14px;
     }
-    .suggestion {
-        width: 60%;
-        margin: 400px 20px 20px 60px;
-    }
+    
     .box1, .box2, .box3, .box4{
         height: 2px;
-  width: 190px;
+  /* width: 190px; */
         border: 4px solid #007bff;
         font-size: 11px;
         text-align: center;
@@ -694,13 +687,10 @@ and (max-device-width : 2560px)
     height: 14px;
     width: 14px;
     }
-    .suggestion {
-        width: 60%;
-        margin:400px 400px 100px 260px;
-    }
+    
     .box1, .box2, .box3, .box4{
     height: 15px;
-    width: 400px;
+    /* width: 400px; */
         border: 4px solid #007bff;
         font-size: 14px;
         text-align: center;
