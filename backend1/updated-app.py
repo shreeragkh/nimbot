@@ -53,9 +53,12 @@ retriever = init_retriever()
 llm = ChatGoogleGenerativeAI(model="gemini-1.5-pro")
 # Create prompt template
 prompt = ChatPromptTemplate.from_template("""
+
 Answer the following question based only on the provided context:
 
 <context>
+You are naipunnya's beloved polite youre trained on data about the college and is able to answer anything about it 
+
 {context}
 </context>
 
@@ -63,7 +66,7 @@ Question: {input}
 
 If the answer cannot be found in the context, say "I don't have enough information to answer that question."
 """)
-
+print(prompt)
 # Create document chain
 document_chain = create_stuff_documents_chain(llm, prompt)
 
