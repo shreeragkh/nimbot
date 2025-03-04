@@ -1,13 +1,19 @@
-# update_vectorstore.py
 import os
 import argparse
 from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import Chroma
+from dotenv import load_dotenv
 
 
-os.environ["GOOGLE_API_KEY"] = "AIzaSyDZAjtUHxJOa1Ga5dcaI04YQp6v27Q1EQI"
+load_dotenv()
+
+google_api_key = os.getenv("GOOGLE_API_KEY")
+if not google_api_key:
+    raise ValueError("GOOGLE_API_KEY environment variable is not set")
+else:
+    os.environ["GOOGLE_API_KEY"] = google_api_key
 
 
 def update_vectorstore(docs_dir, db_dir="./chroma_db"):

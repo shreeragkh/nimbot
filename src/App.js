@@ -37,9 +37,10 @@ function App() {
     setTemp('');
     setLoading(true);
     try {
-      const response = await axios.post('http://127.0.0.1:8000/generate', { prompt: message });
+      const response = await axios.post('http://127.0.0.1:5000/api/chat', { query: message });
       const response_data = await response.data;
-      setChatHistory((history) => [...history, { sender: 'bot', text: response_data.response.content }]);
+      console.log("Backend response:", response_data); // Log the response
+      setChatHistory((history) => [...history, { sender: 'bot', text: response_data.answer }]);
       // console.log(response_data.response.content);
     } catch (error) {
       console.error("Error sending message:", error);
