@@ -10,29 +10,14 @@ import sent_icon from './assets/Sent_icon.png';
 import './App.css';
 
 function App() {
-  const getInitialTheme = () => {
-    const storedTheme = localStorage.getItem("theme");
-    if (storedTheme) {
-      return storedTheme === "dark";
-    }
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  };
-
   const [temp, setTemp] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
-  const [darkTheme, setDarkTheme] = useState(getInitialTheme());
+  const [darkTheme, setDarkTheme] = useState(false);
   const [loading, setLoading] = useState(false);
   const chatMessagesRef = useRef(null);
 
-  useEffect(() => {
-    document.body.className = darkTheme ? "darkTheme" : "lightTheme";
-    localStorage.setItem("theme", darkTheme ? "dark" : "light");
-  }, [darkTheme]);
-
-
   const window_close = () => {
     alert("Due to some browser restrictions, the window cannot be closed. Please close the tab manually.")
-    // window.close()
   };
 
   const refresh = () => {
@@ -40,7 +25,7 @@ function App() {
   };
 
   const toggleTheme = () => {
-    setDarkTheme((prevTheme) => !prevTheme);
+    setDarkTheme(!darkTheme);
   };
 
   const submitMessage = async (message) => {
@@ -52,9 +37,10 @@ function App() {
     setTemp('');
     setLoading(true);
     try {
-      const response = await axios.post('http://127.0.0.1:8000/generate', { prompt: message });
+      const response = await axios.post('http://127.0.0.1:5000/api/chat', { query: message });
       const response_data = await response.data;
-      setChatHistory((history) => [...history, { sender: 'bot', text: response_data.response.content }]);
+      console.log("Backend response:", response_data); // Log the response
+      setChatHistory((history) => [...history, { sender: 'bot', text: response_data.answer }]);
       // console.log(response_data.response.content);
     } catch (error) {
       console.error("Error sending message:", error);
@@ -69,8 +55,6 @@ function App() {
     submitMessage(temp);
   };
 
-  
-
   useEffect(() => {
     if (chatMessagesRef.current) {
       chatMessagesRef.current.scrollTop = chatMessagesRef.current.scrollHeight;
@@ -78,7 +62,7 @@ function App() {
   }, [chatHistory, loading]);
 
   return (
-    <div className={darkTheme ? "App  darkTheme" : "App"}>
+    <div className={darkTheme ? "App darkTheme" : "App"}>
       <div className='navbar'>
         <img className='logo' src={logo} alt='logo' />
         <div className='right-corner'>
@@ -93,26 +77,26 @@ function App() {
         </div>
       </div>
       {chatHistory.length === 0 ? (
-          <>
-            <div className="textbox">
-              <p className="text">Hi 👋, I am NIMBOT, Your<br></br>virtual Assistant. How can I<br></br>help you today?</p>
+        <>
+          <div className="textbox">
+            <p className="text">Hi 👋, I am NIMBOT, Your<br></br>virtual Assistant. How can I<br></br>help you today?</p>
+          </div>
+          <div className="suggestion">
+            <div className="box1" onClick={() => submitMessage("Admission")}>
+              <p className="text-style">Admission</p>
             </div>
-            <div className="suggestion">
-              <div className="box1" onClick={()=>submitMessage("Admission")}>
-                <p className="text-style">Admission</p>
-              </div>
-              <div className="box2" onClick={()=>submitMessage("PG Programmes")}>
-                <p className="text-style">PG Programmes</p>
-              </div>
-              <div className="box1" onClick={()=>submitMessage("UG Programmes")}>
-                <p className="text-style">UG Programmes</p>
-              </div>
-              <div className="box2" onClick={()=>submitMessage("Fee Structure")}>
-                <p className="text-style">Fee Structure</p>
-              </div>
-             </div>
-          </>
-        )  : (
+            <div className="box2" onClick={() => submitMessage("PG Programmes")}>
+              <p className="text-style">PG Programmes</p>
+            </div>
+            <div className="box1" onClick={() => submitMessage("UG Programmes")}>
+              <p className="text-style">UG Programmes</p>
+            </div>
+            <div className="box2" onClick={() => submitMessage("Fee Structure")}>
+              <p className="text-style">Fee Structure</p>
+            </div>
+          </div>
+        </>
+      ) : (
         <div className="chat-messages" ref={chatMessagesRef}>
           {chatHistory.map((message, index) => (
             <div key={index} className={`message ${message.sender === 'user' ? 'user-message' : 'bot-message'}`}>
@@ -129,6 +113,12 @@ function App() {
             className="promp-text"
             placeholder="Write a message..."
             value={temp}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault(); // Prevents newline
+                handlesubmitMessage(e);
+              }
+            }}
           />
           <div className="sent-button">
             <img src={sent_icon} alt="Send" className={loading ? "sent-icon icon-blur" : "sent-icon"} onClick={loading ? null : handlesubmitMessage} />

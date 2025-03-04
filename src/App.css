@@ -2,11 +2,9 @@
 
 html,body{
         margin: auto;   
-             font-family: 'Poppins', sans-serif;
+        font-family: 'Poppins', sans-serif;
         height: 100%;
         overflow: hidden;
- 
-        
 }
 
 
@@ -25,38 +23,26 @@ html,body{
 .promp-text {
     color: black !important;
 }
-
-/* Override Dark Theme */
 .darkTheme html, 
 .darkTheme body,
 .darkTheme .App {
-    background-color: rgb(32, 32, 32) !important;
+    background-color: rgb(32, 32, 32) ;
     color: white !important;
 }
 
 .darkTheme .right-end {
-    background-color: #222 !important;
+    background-color: #7c7c7c;
 }
 
 .darkTheme .promp-container {
-    background-color: #2c2c2c !important;
-    border: 3px solid #444 !important;
+    background-color: #2c2c2c;
+    border: 3px solid #444 ;
 }
 
 .darkTheme .promp-text {
-    color: white !important;
+    color: white ;
 }
-
-
-
-
-
-
-
-
-
 .logo{
-    /* position: fixed; */
     margin: bottom 0;
 }
 .navbar{
@@ -213,7 +199,6 @@ html,body{
   }
   .box1, .box2, .box3, .box4{
     height: 15px;
-    /* width: ; */
     border: 4px solid #007bff;
    
     color: rgb(87, 87, 87);
@@ -236,7 +221,6 @@ html,body{
     border-radius: 25px;
    
     cursor: pointer;
-    /* transition: background-color 0.3s, color 0.3s; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -258,8 +242,6 @@ line-height: normal;
 margin-left: 30px;
   }
   .message{
- 
-   
     gap: 10px;
     max-width: fit-content;
     margin: 0 auto;
@@ -267,12 +249,10 @@ margin-left: 30px;
     padding: 15px;
     background-color: #f1f1f1;
     border-radius: 10px;
-    /* overflow-y: auto; */
     height:fit-content;
   }
   
   .chat-messages{
-    height:700px;
     width:100%;
     overflow-y: auto;  /* Enables vertical scrolling */
     overflow-x: hidden; /* Prevents horizontal scroll */
@@ -291,8 +271,8 @@ margin-left: 30px;
     scrollbar-width: none;
   }
   .user-message{
-  
-    margin-right:50px ;
+    max-width: 50%;
+    margin-right:26px ;
     align-self: flex-end;
     background-color: #9bc2eb;
     color: rgb(0, 0, 0);
@@ -301,8 +281,8 @@ margin-left: 30px;
   }
   
   .bot-message{
-    
-    margin-left: 35px;
+    max-width: 50%;
+    margin-left: 10px;
     margin-top: 20px;
     align-self:flex-start;
     background-color: #e0e0e0;
@@ -344,13 +324,8 @@ and (max-width : 425px) {
     height: 14px;
     width: 14px;
     }
-    /* .suggestion {
-        width: 55%;
-        margin: 400px 20px 20px 60px;
-    } */
     .box1, .box2, .box3, .box4{
         height: 2px;
-  /* width: 171px; */
         border: 4px solid #007bff;
         font-size: 11px;
         text-align: center;
@@ -367,7 +342,7 @@ and (max-width : 425px) {
     }
 
     .chat-messages {
-        height: 400px;
+        height: 75dvh;
     }
     .right-corner{
         gap: 20px;
@@ -420,7 +395,6 @@ and (max-width : 767px)
     }
     .box1, .box2, .box3, .box4{
         height: 2px;
-  /* width: 171px; */
         border: 4px solid #007bff;
         font-size: 11px;
         text-align: center;
@@ -437,7 +411,7 @@ and (max-width : 767px)
     }
 
     .chat-messages {
-        height: 400px;
+        height: 75dvh;
     }
     .right-corner{
         gap: 20px;
@@ -488,7 +462,6 @@ and (orientation : portrait)
     
     .box1, .box2, .box3, .box4{
         height: 2px;
-  /* width: 171px; */
         border: 4px solid #007bff;
         font-size: 11px;
         text-align: center;
@@ -505,7 +478,7 @@ and (orientation : portrait)
     }
 
     .chat-messages {
-        height: 400px;
+        height: 75dvh;
     }
     .right-corner{
         gap: 20px;
@@ -556,7 +529,6 @@ and (orientation : landscape)
    
     .box1, .box2, .box3, .box4{
         height: 2px;
-  /* width: 171px; */
         border: 4px solid #007bff;
         font-size: 11px;
         text-align: center;
@@ -573,7 +545,7 @@ and (orientation : landscape)
     }
 
     .chat-messages {
-        height: 400px;
+        height: 75dvh;
     }
     .right-corner{
         gap: 20px;
@@ -624,7 +596,6 @@ and (max-device-width : 1200px)
     
     .box1, .box2, .box3, .box4{
         height: 2px;
-  /* width: 190px; */
         border: 4px solid #007bff;
         font-size: 11px;
         text-align: center;
@@ -641,7 +612,7 @@ and (max-device-width : 1200px)
     }
 
     .chat-messages {
-        height: 400px;
+        height: 75dvh;
     }
     .right-corner{
         gap: 20px;
@@ -689,8 +660,7 @@ and (max-device-width : 2560px)
     }
     
     .box1, .box2, .box3, .box4{
-    height: 15px;
-    /* width: 400px; */
+        height: 15px;
         border: 4px solid #007bff;
         font-size: 14px;
         text-align: center;
@@ -707,7 +677,7 @@ and (max-device-width : 2560px)
     }
 
     .chat-messages {
-        height: 400px;
+        height: 75dvh;
     }
     .right-corner{
         gap: 20px;

@@ -1,0 +1,208 @@
+NIMIT Chatbot Training Data
+This document gathers comprehensive information about Naipunnya Institute of Management & Information Technology (NIMIT) sourced from various online resources. It is intended to train a chatbot to answer queries on topics ranging from the institute’s history, academic programs, policies, faculty, infrastructure, events, placements, and more.
+
+1. Overview & Background
+    • Name & Identity:
+Naipunnya Institute of Management & Information Technology (NIMIT) is managed by the Archdiocese of Ernakulam–Angamaly.
+Motto: “To reach the unreachable.”
+    • History:
+        ◦ Established in 1998 as a Vocational Training Centre.
+        ◦ Formally inaugurated in 2002 as an affiliated college of the University of Calicut.
+        ◦ Recognized as a Centre of Excellence with sister concerns including Naipunnya School of Management, Naipunnya Business School (NBS), and Naipunnya Public Schools.
+    • Accreditations & Certifications:
+        ◦ NAAC Accredited with a B++ grade.
+        ◦ ISO 9001–2015 certified.
+        ◦ Known as one of the premier professional training institutes in South India.
+    • Location & Contact:
+        ◦ Located in Pongam, Koratty, Thrissur, Kerala (PIN 680308).
+        ◦ Contact details (phone and email) are available on the official website.
+
+2. Vision, Mission & Core Values
+    • Vision:
+To become a centre par excellence of learning—unveiling the best in humans through life enhancement and global relevance.
+    • Mission:
+To mould individuals into successful, vibrant professionals by fostering:
+        ◦ Professionalism and discipline.
+        ◦ Holistic development.
+        ◦ Empathy, personal integrity, innovation, and social commitment.
+    • Core Values:
+        ◦ Creating a conducive, inclusive learning environment.
+        ◦ Emphasizing holistic formation and human development.
+        ◦ Dedication, commitment, and community responsiveness.
+        ◦ Focus on vocational training, creative endeavors, and lifelong learning.
+
+3. Academic Programs & Courses
+Undergraduate Programs (UG)
+    • Commerce & Management:
+        ◦ B.Com (Finance, Computer Application, Co-operation)
+        ◦ BBA
+    • Science & Technology:
+        ◦ B.Sc. Computer Science
+        ◦ BCA
+    • Humanities & Language:
+        ◦ B.A. English Language and Literature
+    • Hotel Management:
+        ◦ First regular degree program in Hotel Management in Kerala.
+    • Social Work:
+        ◦ Bachelor of Social Work (BSW) offered via affiliated departments.
+Postgraduate Programs (PG)
+    • Commerce & Science:
+        ◦ M.Com
+        ◦ M.Sc. Computer Science
+    • Language & Humanities:
+        ◦ M.A. English Language and Literature
+    • Social Work (MSW):
+        ◦ A 2-year program starting in 2024–2025 with specializations (e.g., Medical & Psychiatry, Family & Child Welfare, Community Development).
+Professional & Additional Courses
+    • Competency & Audit Courses:
+        ◦ Courses in business analytics, live projects, and additional skill enhancement programs.
+    • Collaborative Courses:
+        ◦ Courses in association with organizations like the Chartered Institute of Logistics and Transport (CILT) for diplomas in logistics and transport.
+
+4. Faculty, Governance & Academic Council
+    • Faculty:
+        ◦ Experienced and dedicated teaching staff including leaders like Rev. Fr. Dr. Paulachan K.J. (Executive Director & Principal) and Dr. Joy Joseph Puthussery (Dean of Studies / IQAC Coordinator).
+        ◦ Experts from reputed institutions (IIT, IIM, etc.) contribute to various programs.
+    • Academic Council & IQAC:
+        ◦ The Academic Council oversees academic policies with senior faculty and administrators.
+        ◦ The Internal Quality Assurance Cell (IQAC) ensures continuous improvement and quality across programs.
+    • Governing Bodies & Patronage:
+        ◦ The institution is guided by leaders of the Archdiocese of Ernakulam–Angamaly.
+        ◦ The patron is a high-ranking ecclesiastical authority (as indicated in the latest available handbook).
+
+5. Rules, Regulations & Code of Conduct
+General Student Rules
+    • Uniform & Grooming:
+        ◦ Students must wear the prescribed uniform daily.
+        ◦ Strict grooming and hygiene standards are enforced.
+    • Attendance & Leave:
+        ◦ A minimum of 75% attendance is mandatory.
+        ◦ Policies for late arrivals, leaves, and class participation are detailed in the handbooks.
+    • Discipline & Behavior:
+        ◦ Respectful behavior toward faculty and peers is expected.
+        ◦ Misconduct—including ragging, unauthorized gatherings, or misuse of mobile devices—results in strict disciplinary actions.
+        ◦ Detailed classroom, library, and campus conduct rules are in place.
+Specific Regulations
+    • Hostel & Campus Rules:
+        ◦ Separate guidelines exist for hostel life regarding timings, guest policies, and overall conduct.
+    • Office & Certificate Issuance:
+        ◦ Guidelines for obtaining official documents (like transfer certificates) are specified.
+    • Grievance Redressal:
+        ◦ Mechanisms are available for both student and faculty grievances.
+    • Other Regulations:
+        ◦ Detailed policies cover sports, extracurricular activities, and any disciplinary actions as per the latest handbooks.
+
+6. Infrastructure & Facilities
+    • Campus Facilities:
+        ◦ Auditoriums, seminar halls, conference halls, and a modern library (with digital OPAC).
+    • Academic Resources:
+        ◦ IT department support, language labs, computer labs, and specialized training facilities.
+    • Student Amenities:
+        ◦ Hostels, cafeterias, sports facilities, and health centers.
+    • Specialized Facilities:
+        ◦ Training kitchens and mock restaurants for Hotel Management students.
+        ◦ Laboratories and project spaces for technical and vocational training.
+
+7. Achievements & Accreditations
+    • Accreditations:
+        ◦ NAAC (Grade B++ in recent assessments).
+        ◦ ISO 9001–2015 certification.
+    • Awards & Recognitions:
+        ◦ Various endowments and awards for academic and extracurricular excellence.
+        ◦ First in Kerala to offer a regular degree in Hotel Management.
+    • Industry Collaborations:
+        ◦ Partnerships with leading companies (Wipro, TCS, HDFC, etc.) and organizations like CILT.
+    • Alumni Network:
+        ◦ NAIMITR provides strong alumni support for placements and networking.
+
+8. Events, Conferences & Extracurricular Activities
+    • Major Events:
+        ◦ International conferences (e.g., on SDGs and socio-economic development).
+        ◦ Seminars, workshops, annual fests, theme dinners, college days, and nativity celebrations.
+    • Clubs & Societies:
+        ◦ Clubs include Arts Club, Dance Club, Sports Club, Quiz Club, Environmental Club, etc.
+    • Field Work & Social Initiatives:
+        ◦ Regular rural camps, agency visits, and social work projects.
+    • Department-Specific Events:
+        ◦ Social Work: Workshops, rural camp training, seminars.
+        ◦ Business School: Pre-placement training sessions (e.g., PRAGATHI) and global exposure programs.
+
+9. Placement & Career Support
+    • Placement Cell:
+        ◦ A dedicated team works closely with industry partners to secure placements.
+        ◦ Major recruiters include companies like Wipro, TCS, HDFC, and more.
+    • Training & Internships:
+        ◦ Structured industrial training programs and live projects.
+        ◦ Pre-placement training sessions and career counseling.
+    • Alumni Network:
+        ◦ NAIMITR (Alumni Network) supports mentoring, networking, and career development.
+
+10. Additional Resources & Contact Information
+    • Online Resources:
+        ◦ College Magazine, Brochure, Handbooks, Academic Calendar, ELIXIR, and more are available on the website.
+    • User Logins:
+        ◦ Separate portals for Faculty, Students, Parents, and Alumni.
+    • Contact Details:
+        ◦ Address: Pongam, Koratty, Thrissur, Kerala (PIN 680308).
+        ◦ Phone numbers and email addresses are available on the official website.
+    • FAQ Section:
+        ◦ The chatbot should be able to answer common queries such as:
+            ▪ "What courses are available?"
+            ▪ "What are the admission requirements?"
+            ▪ "What are the placement statistics?"
+            ▪ "How do I access the library?"
+            ▪ "What is the dress code?"
+            ▪ "When are the major events scheduled?"
+
+11. Department & School-Specific Information
+Naipunnya Business School (NBS)
+    • MBA Program:
+        ◦ Holistic, student-centered learning; approved by AICTE and affiliated with the University of Calicut.
+        ◦ Emphasis on global exposure, experiential learning, and strong placement support.
+Naipunnya School of Management
+    • Management Programs:
+        ◦ Undergraduate and postgraduate programs with unique teaching methodologies and strong industry linkages.
+Department of Social Work
+    • Programs Offered:
+        ◦ Bachelor of Social Work (BSW) and Master of Social Work (MSW) with specializations.
+    • Approach:
+        ◦ Emphasis on field training, rural camps, agency visits, and partnerships with NGOs and government organizations.
+
+12. FAQs & Sample Chatbot Dialogues
+Q: What is NIMIT?
+A: NIMIT is the Naipunnya Institute of Management & Information Technology, a premier professional training institute in Kerala established in 1998 and affiliated with the University of Calicut.
+Q: What accreditations does NIMIT hold?
+A: NIMIT is NAAC accredited with a B++ grade and is ISO 9001–2015 certified.
+Q: Which courses are available?
+A: NIMIT offers a wide range of courses including B.Com, BBA, B.Sc. in Computer Science, BCA, B.A. in English, M.Com, M.Sc. Computer Science, M.A. in English, as well as specialized programs in Hotel Management and Social Work.
+Q: How is student discipline maintained?
+A: The institute enforces strict rules on uniform, attendance, and conduct, with clear policies against ragging and other misconduct as detailed in its handbooks.
+Q: What facilities are available on campus?
+A: Facilities include auditoriums, seminar halls, a well-equipped library, modern IT and language labs, hostels, cafeterias, and specialized training facilities for various programs.
+(Additional Q&A pairs can be added as needed.)
+
+13. Glossary & Abbreviations
+    • NIMIT: Naipunnya Institute of Management & Information Technology.
+    • NAAC: National Assessment and Accreditation Council.
+    • ISO: International Organization for Standardization.
+    • NBS: Naipunnya Business School.
+    • NAIMITR: NIMIT’s Alumni Network.
+    • IQAC: Internal Quality Assurance Cell.
+
+14. Update & Revision Process
+    • This document should be reviewed and updated regularly to reflect:
+        ◦ New academic calendars and handbooks.
+        ◦ Changes in course offerings, rules, or events.
+        ◦ Latest news and industry partnerships.
+    • Ensure any updates published on the official website are incorporated.
+
+15. References & Sources
+    • Official Website: naipunnya.ac.in
+    • Handbooks: (PDFs from 2021 to 2025 available on the site)
+    • Naipunnya Business School: nbs.ac.in
+    • Departmental Pages: (e.g., Social Work, School of Management)
+    • News & Events: (Latest news pages and event calendars on the website)
+
+You now have the complete training data for NIMIT. Simply copy the entire text above, paste it into a new document in Microsoft Word (or another text editor), and save it as a DOCX file.
+
+
