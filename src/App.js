@@ -219,8 +219,8 @@ function App() {
             }}
           />
           <div className="sent-button">
-            <img src={sent_icon} alt="Send" className={loading ? "sent-icon icon-blur" : "sent-icon"} onClick={loading ? null : handlesubmitMessage} />
             <img src={mic} alt="mic" className="mic" onClick={() => { SpeechRecognition.startListening(); setTemp(''); }}/>
+            <img src={sent_icon} alt="Send" className={loading ? "sent-icon icon-blur" : "sent-icon"} onClick={loading ? null : handlesubmitMessage} />
           </div>
         </div> 
         </>
