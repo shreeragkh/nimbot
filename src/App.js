@@ -21,11 +21,6 @@ function App() {
   const chatMessagesRef = useRef(null);
   const { transcript, resetTranscript, browserSupportsSpeechRecognition, listening } = useSpeechRecognition();
 
-  // browserSupportsSpeechRecognition ? "" : alert("Your browser does not support Speech Recognition. ")
-  if (!browserSupportsSpeechRecognition) {
-    alert("Your browser does not support Speech Recognition. Please use Google Chrome or another supported browser.");
-  }
-
   const window_close = () => {
     alert("Due to some browser restrictions, the window cannot be closed. Please close the tab manually.")
   };
@@ -219,7 +214,7 @@ function App() {
             }}
           />
           <div className="sent-button">
-            <img src={mic} alt="mic" className="mic" onClick={() => { SpeechRecognition.startListening(); setTemp(''); }}/>
+          <img src={mic} alt="mic" className={`mic ${!browserSupportsSpeechRecognition ? 'blurred' : ''}`} onClick={browserSupportsSpeechRecognition ? () => { SpeechRecognition.startListening(); setTemp(''); } : null } />
             <img src={sent_icon} alt="Send" className={loading ? "sent-icon icon-blur" : "sent-icon"} onClick={loading ? null : handlesubmitMessage} />
           </div>
         </div> 

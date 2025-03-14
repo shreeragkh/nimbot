@@ -711,3 +711,8 @@ and (max-device-width : 2560px)
   width: 45px;
       }
 }
+
+.mic.blurred {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
