@@ -15,19 +15,19 @@ html,body{
 }
 .App.darkTheme{
   background-color: black;
-  color: white !important;
+  color: white ;
 
 }
 
 
 .promp-text {
-    color: black !important;
+    color: black;
 }
 .darkTheme html, 
 .darkTheme body,
 .darkTheme .App {
     background-color: rgb(32, 32, 32) ;
-    color: white !important;
+    color: white;
 }
 
 .darkTheme .right-end {
@@ -230,8 +230,11 @@ html,body{
     right: 50%;
     transform: translateX(50%);
   }
-  .suggestion.darkTheme{
+  .suggestion .darkTheme{
     background-color: black;
+  }
+  .darkTheme .text-style{
+    color: white;
   }
   .text{
     color: #125FDE;
